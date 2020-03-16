@@ -16,5 +16,10 @@
   "bugs": {
     "url": "https://github.com/AnandChowdhary/train-natural/issues"
   },
-  "homepage": "https://anandchowdhary.github.io/train-natural/"
+  "homepage": "https://anandchowdhary.github.io/train-natural/",
+  "devDependencies": {
+    "@types/fs-extra": "^8.1.0",
+    "@types/natural": "^0.6.3",
+    "typescript": "^3.8.3"
+  }
 }
