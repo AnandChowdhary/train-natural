@@ -1,12 +1,16 @@
 {
   "name": "train-natural",
   "version": "0.0.0",
-  "description": "Easily Natural train classifiers from text files on your computer",
+  "description": "Easily train Natural classifiers from text files on your system",
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsc",
     "test": "jest --coverage"
   },
+  "files": [
+    "dist"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/AnandChowdhary/train-natural.git"
