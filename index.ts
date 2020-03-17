@@ -1,5 +1,6 @@
 import { BayesClassifier } from "natural";
 import { readdir, lstat, readFile } from "fs-extra";
+import { join } from "path";
 
 export const train = async (
   classifier: Pick<BayesClassifier, "addDocument" | "train">,
@@ -8,13 +9,13 @@ export const train = async (
   const files = await readdir(documents);
   const labels: string[] = [];
   for await (const file of files) {
-    const fileType = await lstat(file);
+    const fileType = await lstat(join(documents, file));
     if (fileType.isDirectory()) labels.push(file);
   }
   for await (const label of labels) {
-    const documents = await readdir(label);
-    for await (const document of documents) {
-      const contents = await readFile(document, "utf8");
+    const docs = await readdir(join(documents, label));
+    for await (const document of docs) {
+      const contents = await readFile(join(documents, label, document), "utf8");
       classifier.addDocument(contents, label);
     }
   }
