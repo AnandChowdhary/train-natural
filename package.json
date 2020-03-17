@@ -6,9 +6,9 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsc",
-    "test": "jest --coverage --coverageReporters=text-lcov | coveralls",
-    "test-without-reporting": "jest --coverage",
-    "test-without-coverage": "jest"
+    "test": "jest",
+    "test-report": "jest --coverage --coverageReporters=text-lcov | coveralls",
+    "test-without-reporting": "jest --coverage"
   },
   "files": [
     "dist"
