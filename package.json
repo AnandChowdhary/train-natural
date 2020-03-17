@@ -6,7 +6,9 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsc",
-    "test": "jest --coverage"
+    "test": "jest --coverage --coverageReporters=text-lcov | coveralls",
+    "test-without-reporting": "jest --coverage",
+    "test-without-coverage": "jest"
   },
   "files": [
     "dist"
@@ -36,6 +38,7 @@
     "natural": "^0.6.3"
   },
   "dependencies": {
+    "coveralls": "^3.0.9",
     "fs-extra": "^8.1.0"
   },
   "jest": {
