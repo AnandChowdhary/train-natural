@@ -45,8 +45,14 @@ describe("train-natural", () => {
   });
 
   beforeAll(async () => {
-    await mkdirp(join(".cache", "india"));
-    await mkdirp(join(".cache", "the-netherlands"));
+    await /* TODO: JSFIX could not patch the breaking change:
+    Creating a directory with fs-extra no longer returns the path 
+    Suggested fix: The returned promise no longer includes the path of the new directory */
+    mkdirp(join(".cache", "india"));
+    await /* TODO: JSFIX could not patch the breaking change:
+    Creating a directory with fs-extra no longer returns the path 
+    Suggested fix: The returned promise no longer includes the path of the new directory */
+    mkdirp(join(".cache", "the-netherlands"));
     await writeFile(join(".cache", "1.txt"), "Example file");
 
     await writeFile(
